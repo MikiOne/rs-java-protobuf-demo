@@ -1,0 +1,23 @@
+syntax = "proto3";
+package student;
+option java_package = "org.demo.protobuf.generated";
+//option java_outer_classname = "ProtobufMessage";
+option java_multiple_files = true;
+
+message Student {
+  int32 id = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string email = 4;
+  repeated PhoneNumber phone = 5;
+
+  message PhoneNumber {
+    string number = 1;
+    PhoneType type = 2;
+  }
+
+  enum PhoneType {
+    MOBILE = 0;
+    LANDLINE = 1;
+  }
+}

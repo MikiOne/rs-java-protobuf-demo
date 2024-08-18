@@ -1,0 +1,32 @@
+syntax = "proto3";
+package org.demo.protobuf;
+option java_package = "org.demo.protobuf.generated";
+//option java_outer_classname = "ProtobufMessage";
+option java_multiple_files = true;
+
+message Student {
+  int32 id = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string email = 4;
+  repeated PhoneNumber phone = 5;
+
+  message PhoneNumber {
+    string number = 1;
+    PhoneType type = 2;
+  }
+
+  enum PhoneType {
+    MOBILE = 0;
+    LANDLINE = 1;
+  }
+}
+
+// 定义请求和响应消息
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloReply {
+  string message = 1;
+}
