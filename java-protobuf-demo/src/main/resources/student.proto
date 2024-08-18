@@ -1,7 +1,6 @@
 syntax = "proto3";
 package org.demo.protobuf;
-option java_package = "org.demo.protobuf.generated";
-//option java_outer_classname = "ProtobufMessage";
+option java_package = "org.demo.protobuf";
 option java_multiple_files = true;
 
 message Student {

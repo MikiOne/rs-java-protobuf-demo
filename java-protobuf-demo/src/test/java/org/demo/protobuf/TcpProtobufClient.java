@@ -1,7 +1,5 @@
 package org.demo.protobuf;
 
-import org.demo.protobuf.generated.Student;
-
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
@@ -47,47 +45,4 @@ public class TcpProtobufClient {
         }
     }
 
-//    public static void main(String[] args) {
-//        try {
-//            // 1. 创建Socket对象，连接到服务端
-//            Socket socket = new Socket("localhost", 9527);
-//
-//            // 2. 获取Socket的输出流
-//            OutputStream out = socket.getOutputStream();
-//
-//            // 3. 发送byte[]数组
-//            byte[] bytes = bytesStudent();
-//            out.write(bytes);
-//            out.flush();
-//
-//            // 4. 关闭Socket
-//            socket.close();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//    public static void main(String[] args) {
-//        String hostname = "localhost"; // 服务器地址
-//        int port = 9527; // 服务器端口
-//
-//        try (Socket socket = new Socket(hostname, port)) {
-//            // 设置输入输出流
-//            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-//            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-//
-//            // 发送消息到服务器
-////            String message = "Hello, Server!";
-////            out.println(message);
-////            System.out.println("Sent: " + message);
-//            byte[] bytes = bytesStudent();
-//            out.print(bytes);
-//
-//            // 接收服务器的响应
-//            String response = in.readLine();
-//            System.out.println("Received: " + response);
-//        } catch (IOException e) {
-//            System.out.println("Client exception: " + e.getMessage());
-//            e.printStackTrace();
-//        }
-//    }
 }

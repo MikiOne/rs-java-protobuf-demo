@@ -1,8 +1,5 @@
 package org.demo.protobuf;
 
-import org.demo.protobuf.generated.HelloReply;
-import org.demo.protobuf.generated.HelloRequest;
-
 import java.io.IOException;
 import java.util.Arrays;
 
