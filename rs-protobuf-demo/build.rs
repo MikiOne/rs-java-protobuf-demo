@@ -10,6 +10,6 @@ fn main() {
     prost_build::Config::new()
         // .default_package_filename("custom_type")
         .out_dir("src/pb")
-        .compile_protos(&["protos/mxsm.proto"], &["."])
+        .compile_protos(&["protos/student.proto"], &["."])
         .unwrap();
 }

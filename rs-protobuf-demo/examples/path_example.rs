@@ -11,7 +11,7 @@ fn main() {
     println!("Parent Directory: {:?}", parent_dir);
 
     let binding = parent_dir
-        .join("protos/mxsm.proto");
+        .join("../protos/student.proto");
 
     let protos = binding
         .as_path()
