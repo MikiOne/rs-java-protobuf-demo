@@ -7,7 +7,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>java-protobuf-demo</artifactId>
+    <artifactId>proto-java-client</artifactId>
     <packaging>jar</packaging>
 
     <name>demo-protobuf-service</name>

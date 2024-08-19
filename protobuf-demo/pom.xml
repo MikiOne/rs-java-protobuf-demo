@@ -15,7 +15,7 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <modules>
-        <module>java-protobuf-demo</module>
+        <module>proto-java-client</module>
     </modules>
 
     <properties>

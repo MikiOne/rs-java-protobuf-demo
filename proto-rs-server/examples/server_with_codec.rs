@@ -22,7 +22,6 @@ async fn main() -> anyhow::Result<()> {
     let listener = TcpListener::bind(addr).await?;
     info!("Start listening on {}", addr);
 
-    // new memory table
     loop {
         let (stream, addr) = listener.accept().await?;
         info!("Client {:?} connected", addr);
