@@ -52,12 +52,12 @@ public interface StudentOrBuilder extends
   /**
    * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
    */
-  java.util.List<Student.PhoneNumber>
+  java.util.List<org.demo.protobuf.Student.PhoneNumber> 
       getPhoneList();
   /**
    * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
    */
-  Student.PhoneNumber getPhone(int index);
+  org.demo.protobuf.Student.PhoneNumber getPhone(int index);
   /**
    * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
    */
@@ -65,11 +65,11 @@ public interface StudentOrBuilder extends
   /**
    * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
    */
-  java.util.List<? extends Student.PhoneNumberOrBuilder>
+  java.util.List<? extends org.demo.protobuf.Student.PhoneNumberOrBuilder> 
       getPhoneOrBuilderList();
   /**
    * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
    */
-  Student.PhoneNumberOrBuilder getPhoneOrBuilder(
+  org.demo.protobuf.Student.PhoneNumberOrBuilder getPhoneOrBuilder(
       int index);
 }

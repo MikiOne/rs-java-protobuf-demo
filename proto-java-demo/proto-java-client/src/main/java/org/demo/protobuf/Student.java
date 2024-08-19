@@ -78,11 +78,11 @@ private static final long serialVersionUID = 0L;
           }
           case 42: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              phone_ = new java.util.ArrayList<Student.PhoneNumber>();
+              phone_ = new java.util.ArrayList<org.demo.protobuf.Student.PhoneNumber>();
               mutable_bitField0_ |= 0x00000001;
             }
             phone_.add(
-                input.readMessage(Student.PhoneNumber.parser(), extensionRegistry));
+                input.readMessage(org.demo.protobuf.Student.PhoneNumber.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -109,15 +109,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return StudentPb.internal_static_org_demo_protobuf_Student_descriptor;
+    return org.demo.protobuf.StudentOuterClass.internal_static_org_demo_protobuf_Student_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return StudentPb.internal_static_org_demo_protobuf_Student_fieldAccessorTable
+    return org.demo.protobuf.StudentOuterClass.internal_static_org_demo_protobuf_Student_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            Student.class, Student.Builder.class);
+            org.demo.protobuf.Student.class, org.demo.protobuf.Student.Builder.class);
   }
 
   /**
@@ -202,7 +202,7 @@ private static final long serialVersionUID = 0L;
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return Student.getDescriptor().getEnumTypes().get(0);
+      return org.demo.protobuf.Student.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final PhoneType[] VALUES = values();
@@ -253,7 +253,7 @@ private static final long serialVersionUID = 0L;
      * <code>.org.demo.protobuf.Student.PhoneType type = 2;</code>
      * @return The type.
      */
-    Student.PhoneType getType();
+    org.demo.protobuf.Student.PhoneType getType();
   }
   /**
    * Protobuf type {@code org.demo.protobuf.Student.PhoneNumber}
@@ -335,15 +335,15 @@ private static final long serialVersionUID = 0L;
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return StudentPb.internal_static_org_demo_protobuf_Student_PhoneNumber_descriptor;
+      return org.demo.protobuf.StudentOuterClass.internal_static_org_demo_protobuf_Student_PhoneNumber_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return StudentPb.internal_static_org_demo_protobuf_Student_PhoneNumber_fieldAccessorTable
+      return org.demo.protobuf.StudentOuterClass.internal_static_org_demo_protobuf_Student_PhoneNumber_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Student.PhoneNumber.class, Student.PhoneNumber.Builder.class);
+              org.demo.protobuf.Student.PhoneNumber.class, org.demo.protobuf.Student.PhoneNumber.Builder.class);
     }
 
     public static final int NUMBER_FIELD_NUMBER = 1;
@@ -397,10 +397,10 @@ private static final long serialVersionUID = 0L;
      * <code>.org.demo.protobuf.Student.PhoneType type = 2;</code>
      * @return The type.
      */
-    @java.lang.Override public Student.PhoneType getType() {
+    @java.lang.Override public org.demo.protobuf.Student.PhoneType getType() {
       @SuppressWarnings("deprecation")
-      Student.PhoneType result = Student.PhoneType.valueOf(type_);
-      return result == null ? Student.PhoneType.UNRECOGNIZED : result;
+      org.demo.protobuf.Student.PhoneType result = org.demo.protobuf.Student.PhoneType.valueOf(type_);
+      return result == null ? org.demo.protobuf.Student.PhoneType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -420,7 +420,7 @@ private static final long serialVersionUID = 0L;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(number_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, number_);
       }
-      if (type_ != Student.PhoneType.MOBILE.getNumber()) {
+      if (type_ != org.demo.protobuf.Student.PhoneType.MOBILE.getNumber()) {
         output.writeEnum(2, type_);
       }
       unknownFields.writeTo(output);
@@ -435,7 +435,7 @@ private static final long serialVersionUID = 0L;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(number_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, number_);
       }
-      if (type_ != Student.PhoneType.MOBILE.getNumber()) {
+      if (type_ != org.demo.protobuf.Student.PhoneType.MOBILE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, type_);
       }
@@ -449,10 +449,10 @@ private static final long serialVersionUID = 0L;
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof Student.PhoneNumber)) {
+      if (!(obj instanceof org.demo.protobuf.Student.PhoneNumber)) {
         return super.equals(obj);
       }
-      Student.PhoneNumber other = (Student.PhoneNumber) obj;
+      org.demo.protobuf.Student.PhoneNumber other = (org.demo.protobuf.Student.PhoneNumber) obj;
 
       if (!getNumber()
           .equals(other.getNumber())) return false;
@@ -477,69 +477,69 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static Student.PhoneNumber parseFrom(
+    public static org.demo.protobuf.Student.PhoneNumber parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Student.PhoneNumber parseFrom(
+    public static org.demo.protobuf.Student.PhoneNumber parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Student.PhoneNumber parseFrom(
+    public static org.demo.protobuf.Student.PhoneNumber parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Student.PhoneNumber parseFrom(
+    public static org.demo.protobuf.Student.PhoneNumber parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Student.PhoneNumber parseFrom(byte[] data)
+    public static org.demo.protobuf.Student.PhoneNumber parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Student.PhoneNumber parseFrom(
+    public static org.demo.protobuf.Student.PhoneNumber parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Student.PhoneNumber parseFrom(java.io.InputStream input)
+    public static org.demo.protobuf.Student.PhoneNumber parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Student.PhoneNumber parseFrom(
+    public static org.demo.protobuf.Student.PhoneNumber parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Student.PhoneNumber parseDelimitedFrom(java.io.InputStream input)
+    public static org.demo.protobuf.Student.PhoneNumber parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static Student.PhoneNumber parseDelimitedFrom(
+    public static org.demo.protobuf.Student.PhoneNumber parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Student.PhoneNumber parseFrom(
+    public static org.demo.protobuf.Student.PhoneNumber parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Student.PhoneNumber parseFrom(
+    public static org.demo.protobuf.Student.PhoneNumber parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -552,7 +552,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(Student.PhoneNumber prototype) {
+    public static Builder newBuilder(org.demo.protobuf.Student.PhoneNumber prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -573,21 +573,21 @@ private static final long serialVersionUID = 0L;
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:org.demo.protobuf.Student.PhoneNumber)
-        Student.PhoneNumberOrBuilder {
+        org.demo.protobuf.Student.PhoneNumberOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return StudentPb.internal_static_org_demo_protobuf_Student_PhoneNumber_descriptor;
+        return org.demo.protobuf.StudentOuterClass.internal_static_org_demo_protobuf_Student_PhoneNumber_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return StudentPb.internal_static_org_demo_protobuf_Student_PhoneNumber_fieldAccessorTable
+        return org.demo.protobuf.StudentOuterClass.internal_static_org_demo_protobuf_Student_PhoneNumber_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                Student.PhoneNumber.class, Student.PhoneNumber.Builder.class);
+                org.demo.protobuf.Student.PhoneNumber.class, org.demo.protobuf.Student.PhoneNumber.Builder.class);
       }
 
-      // Construct using org.demo.protobuf.generated.Student.PhoneNumber.newBuilder()
+      // Construct using org.demo.protobuf.Student.PhoneNumber.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -615,17 +615,17 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return StudentPb.internal_static_org_demo_protobuf_Student_PhoneNumber_descriptor;
+        return org.demo.protobuf.StudentOuterClass.internal_static_org_demo_protobuf_Student_PhoneNumber_descriptor;
       }
 
       @java.lang.Override
-      public Student.PhoneNumber getDefaultInstanceForType() {
-        return Student.PhoneNumber.getDefaultInstance();
+      public org.demo.protobuf.Student.PhoneNumber getDefaultInstanceForType() {
+        return org.demo.protobuf.Student.PhoneNumber.getDefaultInstance();
       }
 
       @java.lang.Override
-      public Student.PhoneNumber build() {
-        Student.PhoneNumber result = buildPartial();
+      public org.demo.protobuf.Student.PhoneNumber build() {
+        org.demo.protobuf.Student.PhoneNumber result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -633,8 +633,8 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public Student.PhoneNumber buildPartial() {
-        Student.PhoneNumber result = new Student.PhoneNumber(this);
+      public org.demo.protobuf.Student.PhoneNumber buildPartial() {
+        org.demo.protobuf.Student.PhoneNumber result = new org.demo.protobuf.Student.PhoneNumber(this);
         result.number_ = number_;
         result.type_ = type_;
         onBuilt();
@@ -675,16 +675,16 @@ private static final long serialVersionUID = 0L;
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Student.PhoneNumber) {
-          return mergeFrom((Student.PhoneNumber)other);
+        if (other instanceof org.demo.protobuf.Student.PhoneNumber) {
+          return mergeFrom((org.demo.protobuf.Student.PhoneNumber)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(Student.PhoneNumber other) {
-        if (other == Student.PhoneNumber.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.demo.protobuf.Student.PhoneNumber other) {
+        if (other == org.demo.protobuf.Student.PhoneNumber.getDefaultInstance()) return this;
         if (!other.getNumber().isEmpty()) {
           number_ = other.number_;
           onChanged();
@@ -707,11 +707,11 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        Student.PhoneNumber parsedMessage = null;
+        org.demo.protobuf.Student.PhoneNumber parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Student.PhoneNumber) e.getUnfinishedMessage();
+          parsedMessage = (org.demo.protobuf.Student.PhoneNumber) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -821,17 +821,17 @@ private static final long serialVersionUID = 0L;
        * @return The type.
        */
       @java.lang.Override
-      public Student.PhoneType getType() {
+      public org.demo.protobuf.Student.PhoneType getType() {
         @SuppressWarnings("deprecation")
-        Student.PhoneType result = Student.PhoneType.valueOf(type_);
-        return result == null ? Student.PhoneType.UNRECOGNIZED : result;
+        org.demo.protobuf.Student.PhoneType result = org.demo.protobuf.Student.PhoneType.valueOf(type_);
+        return result == null ? org.demo.protobuf.Student.PhoneType.UNRECOGNIZED : result;
       }
       /**
        * <code>.org.demo.protobuf.Student.PhoneType type = 2;</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
-      public Builder setType(Student.PhoneType value) {
+      public Builder setType(org.demo.protobuf.Student.PhoneType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -867,12 +867,12 @@ private static final long serialVersionUID = 0L;
     }
 
     // @@protoc_insertion_point(class_scope:org.demo.protobuf.Student.PhoneNumber)
-    private static final Student.PhoneNumber DEFAULT_INSTANCE;
+    private static final org.demo.protobuf.Student.PhoneNumber DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new Student.PhoneNumber();
+      DEFAULT_INSTANCE = new org.demo.protobuf.Student.PhoneNumber();
     }
 
-    public static Student.PhoneNumber getDefaultInstance() {
+    public static org.demo.protobuf.Student.PhoneNumber getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -897,7 +897,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public Student.PhoneNumber getDefaultInstanceForType() {
+    public org.demo.protobuf.Student.PhoneNumber getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1029,19 +1029,19 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PHONE_FIELD_NUMBER = 5;
-  private java.util.List<Student.PhoneNumber> phone_;
+  private java.util.List<org.demo.protobuf.Student.PhoneNumber> phone_;
   /**
    * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
    */
   @java.lang.Override
-  public java.util.List<Student.PhoneNumber> getPhoneList() {
+  public java.util.List<org.demo.protobuf.Student.PhoneNumber> getPhoneList() {
     return phone_;
   }
   /**
    * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends Student.PhoneNumberOrBuilder>
+  public java.util.List<? extends org.demo.protobuf.Student.PhoneNumberOrBuilder> 
       getPhoneOrBuilderList() {
     return phone_;
   }
@@ -1056,14 +1056,14 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
    */
   @java.lang.Override
-  public Student.PhoneNumber getPhone(int index) {
+  public org.demo.protobuf.Student.PhoneNumber getPhone(int index) {
     return phone_.get(index);
   }
   /**
    * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
    */
   @java.lang.Override
-  public Student.PhoneNumberOrBuilder getPhoneOrBuilder(
+  public org.demo.protobuf.Student.PhoneNumberOrBuilder getPhoneOrBuilder(
       int index) {
     return phone_.get(index);
   }
@@ -1133,10 +1133,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof Student)) {
+    if (!(obj instanceof org.demo.protobuf.Student)) {
       return super.equals(obj);
     }
-    Student other = (Student) obj;
+    org.demo.protobuf.Student other = (org.demo.protobuf.Student) obj;
 
     if (getId()
         != other.getId()) return false;
@@ -1176,69 +1176,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static Student parseFrom(
+  public static org.demo.protobuf.Student parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static Student parseFrom(
+  public static org.demo.protobuf.Student parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static Student parseFrom(
+  public static org.demo.protobuf.Student parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static Student parseFrom(
+  public static org.demo.protobuf.Student parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static Student parseFrom(byte[] data)
+  public static org.demo.protobuf.Student parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static Student parseFrom(
+  public static org.demo.protobuf.Student parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static Student parseFrom(java.io.InputStream input)
+  public static org.demo.protobuf.Student parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static Student parseFrom(
+  public static org.demo.protobuf.Student parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static Student parseDelimitedFrom(java.io.InputStream input)
+  public static org.demo.protobuf.Student parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static Student parseDelimitedFrom(
+  public static org.demo.protobuf.Student parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static Student parseFrom(
+  public static org.demo.protobuf.Student parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static Student parseFrom(
+  public static org.demo.protobuf.Student parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -1251,7 +1251,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(Student prototype) {
+  public static Builder newBuilder(org.demo.protobuf.Student prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -1272,21 +1272,21 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:org.demo.protobuf.Student)
-          StudentOrBuilder {
+      org.demo.protobuf.StudentOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return StudentPb.internal_static_org_demo_protobuf_Student_descriptor;
+      return org.demo.protobuf.StudentOuterClass.internal_static_org_demo_protobuf_Student_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return StudentPb.internal_static_org_demo_protobuf_Student_fieldAccessorTable
+      return org.demo.protobuf.StudentOuterClass.internal_static_org_demo_protobuf_Student_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Student.class, Student.Builder.class);
+              org.demo.protobuf.Student.class, org.demo.protobuf.Student.Builder.class);
     }
 
-    // Construct using org.demo.protobuf.generated.Student.newBuilder()
+    // Construct using org.demo.protobuf.Student.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -1325,17 +1325,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return StudentPb.internal_static_org_demo_protobuf_Student_descriptor;
+      return org.demo.protobuf.StudentOuterClass.internal_static_org_demo_protobuf_Student_descriptor;
     }
 
     @java.lang.Override
-    public Student getDefaultInstanceForType() {
-      return Student.getDefaultInstance();
+    public org.demo.protobuf.Student getDefaultInstanceForType() {
+      return org.demo.protobuf.Student.getDefaultInstance();
     }
 
     @java.lang.Override
-    public Student build() {
-      Student result = buildPartial();
+    public org.demo.protobuf.Student build() {
+      org.demo.protobuf.Student result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -1343,8 +1343,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public Student buildPartial() {
-      Student result = new Student(this);
+    public org.demo.protobuf.Student buildPartial() {
+      org.demo.protobuf.Student result = new org.demo.protobuf.Student(this);
       int from_bitField0_ = bitField0_;
       result.id_ = id_;
       result.firstName_ = firstName_;
@@ -1397,16 +1397,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof Student) {
-        return mergeFrom((Student)other);
+      if (other instanceof org.demo.protobuf.Student) {
+        return mergeFrom((org.demo.protobuf.Student)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(Student other) {
-      if (other == Student.getDefaultInstance()) return this;
+    public Builder mergeFrom(org.demo.protobuf.Student other) {
+      if (other == org.demo.protobuf.Student.getDefaultInstance()) return this;
       if (other.getId() != 0) {
         setId(other.getId());
       }
@@ -1463,11 +1463,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Student parsedMessage = null;
+      org.demo.protobuf.Student parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (Student) e.getUnfinishedMessage();
+        parsedMessage = (org.demo.protobuf.Student) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1737,22 +1737,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<Student.PhoneNumber> phone_ =
+    private java.util.List<org.demo.protobuf.Student.PhoneNumber> phone_ =
       java.util.Collections.emptyList();
     private void ensurePhoneIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        phone_ = new java.util.ArrayList<Student.PhoneNumber>(phone_);
+        phone_ = new java.util.ArrayList<org.demo.protobuf.Student.PhoneNumber>(phone_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        Student.PhoneNumber, Student.PhoneNumber.Builder, Student.PhoneNumberOrBuilder> phoneBuilder_;
+        org.demo.protobuf.Student.PhoneNumber, org.demo.protobuf.Student.PhoneNumber.Builder, org.demo.protobuf.Student.PhoneNumberOrBuilder> phoneBuilder_;
 
     /**
      * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
      */
-    public java.util.List<Student.PhoneNumber> getPhoneList() {
+    public java.util.List<org.demo.protobuf.Student.PhoneNumber> getPhoneList() {
       if (phoneBuilder_ == null) {
         return java.util.Collections.unmodifiableList(phone_);
       } else {
@@ -1772,7 +1772,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
      */
-    public Student.PhoneNumber getPhone(int index) {
+    public org.demo.protobuf.Student.PhoneNumber getPhone(int index) {
       if (phoneBuilder_ == null) {
         return phone_.get(index);
       } else {
@@ -1783,7 +1783,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
      */
     public Builder setPhone(
-        int index, Student.PhoneNumber value) {
+        int index, org.demo.protobuf.Student.PhoneNumber value) {
       if (phoneBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1800,7 +1800,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
      */
     public Builder setPhone(
-        int index, Student.PhoneNumber.Builder builderForValue) {
+        int index, org.demo.protobuf.Student.PhoneNumber.Builder builderForValue) {
       if (phoneBuilder_ == null) {
         ensurePhoneIsMutable();
         phone_.set(index, builderForValue.build());
@@ -1813,7 +1813,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
      */
-    public Builder addPhone(Student.PhoneNumber value) {
+    public Builder addPhone(org.demo.protobuf.Student.PhoneNumber value) {
       if (phoneBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1830,7 +1830,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
      */
     public Builder addPhone(
-        int index, Student.PhoneNumber value) {
+        int index, org.demo.protobuf.Student.PhoneNumber value) {
       if (phoneBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1847,7 +1847,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
      */
     public Builder addPhone(
-        Student.PhoneNumber.Builder builderForValue) {
+        org.demo.protobuf.Student.PhoneNumber.Builder builderForValue) {
       if (phoneBuilder_ == null) {
         ensurePhoneIsMutable();
         phone_.add(builderForValue.build());
@@ -1861,7 +1861,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
      */
     public Builder addPhone(
-        int index, Student.PhoneNumber.Builder builderForValue) {
+        int index, org.demo.protobuf.Student.PhoneNumber.Builder builderForValue) {
       if (phoneBuilder_ == null) {
         ensurePhoneIsMutable();
         phone_.add(index, builderForValue.build());
@@ -1875,7 +1875,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
      */
     public Builder addAllPhone(
-        java.lang.Iterable<? extends Student.PhoneNumber> values) {
+        java.lang.Iterable<? extends org.demo.protobuf.Student.PhoneNumber> values) {
       if (phoneBuilder_ == null) {
         ensurePhoneIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1915,14 +1915,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
      */
-    public Student.PhoneNumber.Builder getPhoneBuilder(
+    public org.demo.protobuf.Student.PhoneNumber.Builder getPhoneBuilder(
         int index) {
       return getPhoneFieldBuilder().getBuilder(index);
     }
     /**
      * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
      */
-    public Student.PhoneNumberOrBuilder getPhoneOrBuilder(
+    public org.demo.protobuf.Student.PhoneNumberOrBuilder getPhoneOrBuilder(
         int index) {
       if (phoneBuilder_ == null) {
         return phone_.get(index);  } else {
@@ -1932,7 +1932,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
      */
-    public java.util.List<? extends Student.PhoneNumberOrBuilder>
+    public java.util.List<? extends org.demo.protobuf.Student.PhoneNumberOrBuilder> 
          getPhoneOrBuilderList() {
       if (phoneBuilder_ != null) {
         return phoneBuilder_.getMessageOrBuilderList();
@@ -1943,31 +1943,31 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
      */
-    public Student.PhoneNumber.Builder addPhoneBuilder() {
+    public org.demo.protobuf.Student.PhoneNumber.Builder addPhoneBuilder() {
       return getPhoneFieldBuilder().addBuilder(
-          Student.PhoneNumber.getDefaultInstance());
+          org.demo.protobuf.Student.PhoneNumber.getDefaultInstance());
     }
     /**
      * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
      */
-    public Student.PhoneNumber.Builder addPhoneBuilder(
+    public org.demo.protobuf.Student.PhoneNumber.Builder addPhoneBuilder(
         int index) {
       return getPhoneFieldBuilder().addBuilder(
-          index, Student.PhoneNumber.getDefaultInstance());
+          index, org.demo.protobuf.Student.PhoneNumber.getDefaultInstance());
     }
     /**
      * <code>repeated .org.demo.protobuf.Student.PhoneNumber phone = 5;</code>
      */
-    public java.util.List<Student.PhoneNumber.Builder>
+    public java.util.List<org.demo.protobuf.Student.PhoneNumber.Builder> 
          getPhoneBuilderList() {
       return getPhoneFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        Student.PhoneNumber, Student.PhoneNumber.Builder, Student.PhoneNumberOrBuilder>
+        org.demo.protobuf.Student.PhoneNumber, org.demo.protobuf.Student.PhoneNumber.Builder, org.demo.protobuf.Student.PhoneNumberOrBuilder> 
         getPhoneFieldBuilder() {
       if (phoneBuilder_ == null) {
         phoneBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            Student.PhoneNumber, Student.PhoneNumber.Builder, Student.PhoneNumberOrBuilder>(
+            org.demo.protobuf.Student.PhoneNumber, org.demo.protobuf.Student.PhoneNumber.Builder, org.demo.protobuf.Student.PhoneNumberOrBuilder>(
                 phone_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
@@ -1993,12 +1993,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:org.demo.protobuf.Student)
-  private static final Student DEFAULT_INSTANCE;
+  private static final org.demo.protobuf.Student DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new Student();
+    DEFAULT_INSTANCE = new org.demo.protobuf.Student();
   }
 
-  public static Student getDefaultInstance() {
+  public static org.demo.protobuf.Student getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -2023,7 +2023,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public Student getDefaultInstanceForType() {
+  public org.demo.protobuf.Student getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

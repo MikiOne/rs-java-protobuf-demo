@@ -11,8 +11,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.demo.protobuf</groupId>
-    <artifactId>protobuf-demo</artifactId>
+    <artifactId>proto-java-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+
+    <name>proto-java-demo</name>
 
     <modules>
         <module>proto-java-client</module>
@@ -29,7 +31,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-<!--                <version>3.2.4</version>-->
+                <!--                <version>3.2.4</version>-->
             </plugin>
         </plugins>
     </build>
