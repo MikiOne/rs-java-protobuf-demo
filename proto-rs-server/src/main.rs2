@@ -1,0 +1,34 @@
+use bytes::BytesMut;
+use criterion::{criterion_group, criterion_main, Criterion};
+use prost::Message;
+use rs_protobuf_demo::student::Student;
+
+fn encode() -> anyhow::Result<BytesMut> {
+    let mut student = Student::default();
+    student.id = 1;
+    student.first_name = "hello".to_string();
+
+    let mut buf = BytesMut::with_capacity(1024);
+    println!("{:#x}", buf);
+    student.frame_encoder(&mut buf)?;
+    Ok(buf)
+}
+fn decode_slice(buf: &mut BytesMut) -> anyhow::Result<()> {
+    Student::decode(&buf[..])?;
+    Ok(())
+}
+
+fn decode_buf(buf: &mut BytesMut) -> anyhow::Result<()> {
+    Student::decode(buf)?;
+    Ok(())
+}
+
+fn criterion_benchmark(c: &mut Criterion) {
+    let mut buf = encode().unwrap();
+    // let mut buf = [0u8; 1024];
+    c.bench_function("decode_slice", |b| b.iter(|| decode_slice(&mut buf)));
+    c.bench_function("decode_buf", |b| b.iter(|| decode_buf(&mut buf)));
+}
+
+criterion_group!(benches, criterion_benchmark);
+criterion_main!(benches);

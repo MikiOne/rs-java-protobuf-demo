@@ -11,8 +11,16 @@ fn main() {
     //         .compile_protos(&["animals.proto"], &["."])
     //         .unwrap();
 
-    prost_build::Config::new()
-        // .default_package_filename("custom_type")
+    // prost_build::Config::new()
+    //     // .default_package_filename("custom_type")
+    //     .out_dir("src/pb")
+    //     .compile_protos(&["protos/student.proto"], &["."])
+    //     .unwrap();
+
+    let mut config = prost_build::Config::new();
+    config.bytes(&["."]);
+    config.type_attribute(".", "#[derive(PartialOrd)]");
+    config
         .out_dir("src/pb")
         .compile_protos(&["protos/student.proto"], &["."])
         .unwrap();
