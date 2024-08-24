@@ -45,6 +45,7 @@ where
             let mut gz = GzEncoder::new(payload.writer(), Compression::default());
             gz.write_all(&buf1)?;
             payload = gz.finish()?.into_inner();
+            println!("origin len: {}, compressed: {}", len, payload.len());
 
             // 写入压缩标志位机payload size
             // 注意：这里的payload size是指payload的长度，而不是整个buf的长度
@@ -79,6 +80,72 @@ where
         }
     }
 }
+
+/// 从帧头中解析出长度和压缩标志位
+pub fn decode_header(header: usize) -> (usize, bool) {
+    let len = header & !COMPRESSION_BIT;
+    let compressed = header & COMPRESSION_BIT == COMPRESSION_BIT;
+    (len, compressed)
+}
+
+impl FrameCodec for Student {}
+
+#[cfg(test)]
+mod tests {
+    use std::io::Bytes;
+    use crate::pb::student::Student;
+
+    use super::*;
+
+    #[test]
+    fn student_encode_decode_should_work() -> anyhow::Result<()> {
+        let mut student = Student::default();
+        student.id = 101;
+        student.first_name = "hello".to_string();
+
+        let mut buf = BytesMut::with_capacity(1024);
+        student.encode_frame(&mut buf)?;
+
+        let student2 = Student::decode_frame(&mut buf)?;
+        assert_eq!(student, student2);
+        Ok(())
+    }
+
+    // encode_decode的压缩测试，压缩阈值设置为1436，即大于1436字节的消息才会被压缩
+    #[test]
+    fn student_compression_encode_decode_should_work() -> anyhow::Result<()> {
+        let name = vec![0u8; COMPRESSION_LIMIT + 1];
+        let mut student = Student::default();
+        student.id = 101;
+        student.first_name = String::from_utf8(name).unwrap();
+
+        let mut buf = BytesMut::new();
+        student.encode_frame(&mut buf)?;
+
+        let student2 = Student::decode_frame(&mut buf)?;
+        assert_eq!(student, student2);
+        Ok(())
+    }
+
+    #[test]
+    fn test_frame_codec() -> anyhow::Result<()> {
+        let mut student = Student::default();
+        student.id = 1;
+        student.first_name = "hello".to_string();
+
+        let mut buf = BytesMut::with_capacity(1024);
+        println!("{:#x}", buf);
+        student.encode_frame(&mut buf)?;
+        println!("{:#x}", buf);
+
+        // assert_eq!(student, Student::frame_decoder(&mut buf)?);
+        Ok(())
+    }
+}
+
+// pub trait FrameCodec
+// where
+//     Self: Message + Sized + Default,
 // {
 //     fn encode_frame(&mut self, buf: &mut BytesMut) -> anyhow::Result<()> {
 //         let len = self.encoded_len();
@@ -154,48 +221,3 @@ where
 //         }
 //     }
 // }
-
-/// 从帧头中解析出长度和压缩标志位
-pub fn decode_header(header: usize) -> (usize, bool) {
-    let len = header & !COMPRESSION_BIT;
-    let compressed = header & COMPRESSION_BIT == COMPRESSION_BIT;
-    (len, compressed)
-}
-
-impl FrameCodec for Student {}
-
-#[cfg(test)]
-mod tests {
-    use crate::pb::student::Student;
-
-    use super::*;
-
-    #[test]
-    fn student_encode_decode_should_work() -> anyhow::Result<()> {
-        let mut student = Student::default();
-        student.id = 101;
-        student.first_name = "hello".to_string();
-
-        let mut buf = BytesMut::with_capacity(1024);
-        student.encode_frame(&mut buf)?;
-
-        let student2 = Student::decode_frame(&mut buf)?;
-        assert_eq!(student, student2);
-        Ok(())
-    }
-
-    #[test]
-    fn test_frame_codec() -> anyhow::Result<()> {
-        let mut student = Student::default();
-        student.id = 1;
-        student.first_name = "hello".to_string();
-
-        let mut buf = BytesMut::with_capacity(1024);
-        println!("{:#x}", buf);
-        student.encode_frame(&mut buf)?;
-        println!("{:#x}", buf);
-
-        // assert_eq!(student, Student::frame_decoder(&mut buf)?);
-        Ok(())
-    }
-}
