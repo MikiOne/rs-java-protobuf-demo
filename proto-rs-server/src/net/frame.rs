@@ -95,7 +95,7 @@ pub fn decode_header(header: usize) -> (usize, bool) {
 impl FrameCodec for Student {}
 
 // 异步读取帧
-pub async fn read_frame<S>(mut stream: S, buf: &mut BytesMut) -> anyhow::Result<()>
+pub async fn read_frame<S>(stream: &mut S, buf: &mut BytesMut) -> anyhow::Result<()>
 where
     S: AsyncRead + Unpin + Send,
 {
