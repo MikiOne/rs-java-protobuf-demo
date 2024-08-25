@@ -1,10 +1,13 @@
 use std::io::{Read, Write};
+
 use bytes::{Buf, BufMut, BytesMut};
 use flate2::Compression;
 use flate2::read::GzDecoder;
 use flate2::write::GzEncoder;
 use prost::Message;
+use tokio::io::{AsyncRead, AsyncReadExt};
 use tracing::debug;
+
 use crate::pb::student::Student;
 use crate::student::student;
 
@@ -76,6 +79,7 @@ where
             buf.advance(len);
             Ok(Self::decode(&buf1[..buf1.len()])?)
         } else {
+            // buf.advance(LEN_LEN);
             Ok(Self::decode(buf)?)
         }
     }
@@ -90,12 +94,85 @@ pub fn decode_header(header: usize) -> (usize, bool) {
 
 impl FrameCodec for Student {}
 
+// 异步读取帧
+pub async fn read_frame<S>(mut stream: S, buf: &mut BytesMut) -> anyhow::Result<()>
+where
+    S: AsyncRead + Unpin + Send,
+{
+    let header = stream.read_u32().await?;
+    let (len, _compressed) = decode_header(header as usize);
+    debug!("Got a frame: msg len {}", len);
+
+    buf.reserve(LEN_LEN + len);     // 假设len = 13
+    println!("read_frame: buf len: {}", buf.len()); // 0
+
+    buf.put_u32(header);
+    println!("read_frame: buf len: {}", buf.len()); // 4
+
+    unsafe {
+        buf.advance_mut(len);
+    }
+    println!("read_frame: buf len: {}", buf.len()); // 13
+    stream.read_exact(&mut buf[LEN_LEN..]).await?;
+    Ok(())
+}
+
 #[cfg(test)]
 mod tests {
-    use std::io::Bytes;
+    use std::pin::Pin;
+    use std::task::{Context, Poll};
+
+    use tokio::io::ReadBuf;
+
     use crate::pb::student::Student;
 
     use super::*;
+
+    struct DummyStream {
+        buf: BytesMut,
+    }
+
+    impl AsyncRead for DummyStream {
+        fn poll_read(
+            self: Pin<&mut Self>,
+            cx: &mut Context<'_>,
+            buf: &mut ReadBuf<'_>,
+        ) -> Poll<std::io::Result<()>> {
+            // 看看 ReadBuf 需要多大的数据
+            let size = buf.capacity();
+
+            // split 出这么大的数据
+            let data = self.get_mut().buf.split_to(size);
+
+            // 拷贝给 ReadBuf
+            buf.put_slice(&data);
+
+            // 直接完工
+            Poll::Ready(Ok(()))
+        }
+    }
+
+    #[tokio::test]
+    async fn read_frame_should_work() -> anyhow::Result<()> {
+        let mut student = Student::default();
+        student.id = 101;
+        student.first_name = "hello".to_string();
+
+        let mut buf = BytesMut::with_capacity(1024);
+        student.encode_frame(&mut buf)?;
+        let size = buf.len();
+        let other = buf.split_off(buf.len());
+        drop(other);
+
+        let mut stream = DummyStream { buf };
+        let mut buf_stream = BytesMut::with_capacity(1024);
+        read_frame(&mut stream, &mut buf_stream).await.unwrap();
+
+        let student_stream = Student::decode_frame(&mut buf_stream)?;
+        assert_eq!(student, student_stream);
+        Ok(())
+    }
+
 
     #[test]
     fn student_encode_decode_should_work() -> anyhow::Result<()> {
